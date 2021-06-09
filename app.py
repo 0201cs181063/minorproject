@@ -10,9 +10,11 @@ from googletrans import Translator
 from pprint import pprint
 from youtube_transcript_api import YouTubeTranscriptApi
 from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
-import pickle
+import gzip, pickle
 
-test = pickle.load(open('file.pkl', 'rb'))
+with gzip.open('test.pklz', 'rb') as ifp:
+    test = pickle.load(ifp)
+
 
 app = Flask(__name__)
 
