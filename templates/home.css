@@ -1,0 +1,13 @@
+body{
+  scroll-behavior: smooth;
+}
+.fcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card-body{
+    margin: 3%;
+    background-color: #282846;
+    color:white;
+}
