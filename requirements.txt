@@ -11,4 +11,4 @@ pandas==1.2.4
 wheel==0.34.2
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
-tokenizer==3.1.2
+torch==1.8.1
