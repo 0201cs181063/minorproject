@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- link external css -->
+  <link rel="stylesheet" href="C:\Users\hp\Desktop\trial\templates\abou.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- favicon -->
+  <link rel="icon" type="image/jpg" href="../static/favicon (5).ico">
+
+  <title>Youtube Videos Summarizer → main page</title>
+
+
+
+</head>
+
+
+
+
+<body  style="text-align: center;  background-color:#fcf1f1;">
+
+  <div class="card" style="text-align: center; background-color:#eff8ff;">
+    <h5 class="card-header text-white" style="text-align: center; background-color:#282846;">Welcome to Youtube Videos
+      Summarizer</h5>
+    <div class="card-body">
+      <h5 class="card-title">Get your youtube vedio's summary</h5>
+      <p class="card-text">Here we convert youtube vedios into a text summary to save your valuable time.</p>
+      <!-- main form for performing action -->
+      <form method="POST" ,  action="/about" , role="form">
+        <div class="form-group">
+          <input type="url" , name='a' , placeholder="Enter YouTube URL" required>
+          <br>
+          <input type="submit" , value='Summarize'
+            style="margin-top:3%;text-align: center; background-color:#282846 ;color:white">
+        </div>
+      </form>
+      <!-- div for adding text -->
+
+      <!-- end of form -->
+    </div>
+
+  </div>
+<div >
+  
+  {% for x in error %}
+
+  <div class="alert alert-danger">
+    <strong>Sorry!</strong> {{x}}
+  </div>
+
+  {% endfor %}
+
+</div>
+
+  <div>{% for x in data %}
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body" style="text-align: left;">
+            <h5 class="card-title">Summary</h5>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Features</h5>
+            <p class="card-text"><form action="/aboutform" name="form1" id="form1" method="POST">
+              <select name="len" id="len">
+                <option name="Hindi" value="Hindi" selected="selected">Hindi</option>
+                <option name="French" value="French" selected="selected">French</option>
+                <option name="German" value="German" selected="selected">German</option>
+                <option name="English" value="English" selected="selected">English</option>
+              </select>
+              <input name="txt" type="text" value={{x}} style="visibility: hidden;" size="4000">
+              <br><br>
+              
+              
+              <input type="submit" value="Submit">
+              
+            </form>
+            
+            
+          </p>
+
+          
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      
+      
+    </div>
+    {% endfor %}
+
+
+  </div>
+
+
+
+
+</body>
+
+
+
+</html>
