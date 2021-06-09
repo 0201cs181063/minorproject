@@ -10,12 +10,12 @@ from googletrans import Translator
 from pprint import pprint
 from youtube_transcript_api import YouTubeTranscriptApi
 from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
-# import pickle
-import gzip, pickle
-with open('file.pkl', 'rb') as ifp:
-    test=(pickle.load(ifp))
-    test.close()
-# test = pickle.load(open('file.pkl', 'rb'))
+import pickle
+# import gzip, pickle
+# with open('file.pkl', 'rb') as ifp:
+#     test=(pickle.load(ifp))
+#     test.close()
+test = pickle.load(open('file.pkl', 'rb'))
 # with gzip.open('file.pkl', 'rb') as ifp:
 #     test=(pickle.load(ifp))
 
