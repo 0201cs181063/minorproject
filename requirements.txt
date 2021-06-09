@@ -1,4 +1,4 @@
-transformers==3.0.2
+transformers==4.6.1
 joblib==0.16.0
 urllib3==1.25.10
 Flask==1.1.1
@@ -12,4 +12,6 @@ pandas==1.2.4
 wheel==0.34.2
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
-PEP517 
+json2json==0.1.0
+toml==0.10.2
+tokenizers==0.10.3
