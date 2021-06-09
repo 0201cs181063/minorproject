@@ -5,7 +5,6 @@ sentencepiece==0.1.91
 urllib3==1.25.10
 Flask==1.1.1
 numpy==1.20.3
-urllib3==1.25.8
 googletrans==3.1.0a0
 youtube-transcript-api==0.4.1
 pickleshare==0.7.5
