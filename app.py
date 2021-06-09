@@ -12,7 +12,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 import gzip, pickle
 
-with gzip.open('test.pklz', 'rb') as ifp:
+with gzip.open('test.pkl', 'rb') as ifp:
     test = pickle.load(ifp)
 
 
