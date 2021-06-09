@@ -9,4 +9,6 @@ gunicorn==19.9.0
 Jinja2==2.11.1
 pandas==1.2.4
 wheel==0.34.2
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
 tokenizers==0.8.1rc2
