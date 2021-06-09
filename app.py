@@ -9,7 +9,7 @@ from googletrans import Translator
 
 from pprint import pprint
 from youtube_transcript_api import YouTubeTranscriptApi
-from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
+# from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 import pickle
 
 test = pickle.load(open('file.pkl', 'rb'))
