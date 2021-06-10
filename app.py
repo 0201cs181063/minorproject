@@ -78,20 +78,24 @@ def home():
     result = ""
     for i in transcript:
         result += ' ' + i['text']
-    summarized_text1 = []
-#     num_iters = int(len(result)/3000)
-#     summarized_text = []
 #     summarized_text1 = []
-#     trial_sum=""
-#     for i in range(0, num_iters + 1):
-#         start = 0
-#         start = i * 3000
-#         end = (i + 1) * 3000
-#         out = test(result[start:end],max_length=50)
-#         out = out[0]
-#         out = out['summary_text']
-#         summarized_text.append(out)
-#         trial_sum = trial_sum + out
+    num_iters = int(len(result)/3000)
+    summarized_text = []
+    summarized_text1 = []
+    trial_sum=""
+    for i in range(0, num_iters + 1):
+        start = 0
+        start = i * 3000
+        end = (i + 1) * 3000
+        with open('file.pkl', 'rb') as ifp:
+           test=(pickle.load(ifp))
+#            test.close()
+        out = test(result[start:end],max_length=50)
+        test.close()
+        out = out[0]
+        out = out['summary_text']
+        summarized_text.append(out)
+        trial_sum = trial_sum + out
     global h
     h=result
     summarized_text1.append(result)
