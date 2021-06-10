@@ -77,28 +77,28 @@ def home():
 
 
 
-#     result = ""
-#     for i in transcript:
-#         result += ' ' + i['text']
+    result = ""
+    for i in transcript:
+        result += ' ' + i['text']
 
-#     num_iters = int(len(result)/3000)
-#     summarized_text = []
-#     summarized_text1 = []
-#     trial_sum=""
-#     for i in range(0, num_iters + 1):
-#         start = 0
-#         start = i * 3000
-#         end = (i + 1) * 3000
+    num_iters = int(len(result)/3000)
+    summarized_text = []
+    summarized_text1 = []
+    trial_sum=""
+    for i in range(0, num_iters + 1):
+        start = 0
+        start = i * 3000
+        end = (i + 1) * 3000
 #         out = test(result[start:end],max_length=50)
 #         out = out[0]
 #         out = out['summary_text']
 #         summarized_text.append(out)
-#         trial_sum = trial_sum + out
-#     global h
-#     h=trial_sum
-#     summarized_text1.append(trial_sum)
+        trial_sum = trial_sum + out
+    global h
+    h=trial_sum
+    summarized_text1.append(trial_sum)
     
-    return render_template('about.html', data= transcript)
+    return render_template('about.html', data= summarized_text1)
     
 
 
