@@ -79,7 +79,7 @@ def home():
 
     result = ""
     for i in transcript:
-        result += ' ' + i['text']
+        result += ' ' + i
 
 #     num_iters = int(len(result)/3000)
 #     summarized_text = []
