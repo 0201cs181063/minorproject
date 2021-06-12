@@ -102,15 +102,12 @@ def home():
 #     h=result
 #     summarized_text1.append(result)
     summarized_text1 = []
-    url = "https://meaningcloud-summarization-v1.p.rapidapi.com/summarization-1.0"
-    querystring = {"sentences":result,"url":"http://en.wikipedia.org/wiki/Star_Trek"}
+    url = "https://aylien-text.p.rapidapi.com/summarize"
 
-    headers = {
-        'accept': "application/json",
-        'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
-        'x-rapidapi-host': "meaningcloud-summarization-v1.p.rapidapi.com"
-        }
-
+headers = {
+    'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
+    'x-rapidapi-host': "aylien-text.p.rapidapi.com"
+    }
     response = requests.request("GET", url, headers=headers, params=result)
     summarized_text1.append(response)
 #     url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer-text"
