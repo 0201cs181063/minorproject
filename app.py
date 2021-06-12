@@ -103,7 +103,7 @@ def home():
 #     summarized_text1.append(result)
     summarized_text1 = []
     url = "https://meaningcloud-summarization-v1.p.rapidapi.com/summarization-1.0"
-#     querystring = {"sentences":result,"url":"http://en.wikipedia.org/wiki/Star_Trek"}
+    querystring = {"sentences":result,"url":"http://en.wikipedia.org/wiki/Star_Trek"}
 
     headers = {
         'accept': "application/json",
