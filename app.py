@@ -111,7 +111,7 @@ def home():
         'x-rapidapi-host': "textanalysis-text-summarization.p.rapidapi.com"
         }
     summarized_text1 = []
-    response = requests.request("POST", url, data=result, headers=headers)
+    response = requests.request("POST", url, data=payload, headers=headers)
     summarized_text1.append(response)
     return render_template('about.html', data= summarized_text1)
     
