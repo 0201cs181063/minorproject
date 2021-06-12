@@ -104,10 +104,10 @@ def home():
     summarized_text1 = []
     url = "https://aylien-text.p.rapidapi.com/summarize"
 
-headers = {
-    'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
-    'x-rapidapi-host': "aylien-text.p.rapidapi.com"
-    }
+    headers = {
+        'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
+        'x-rapidapi-host': "aylien-text.p.rapidapi.com"
+        }
     response = requests.request("GET", url, headers=headers, params=result)
     summarized_text1.append(response)
 #     url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer-text"
