@@ -15,10 +15,10 @@ import pickle
 
 # test=joblib.load(open('file.pkl', 'rb'));
 
-import gzip, pickle
-with open('file.pkl', 'rb') as ifp:
-    test=(pickle.load(ifp))
-    test.close()
+# import gzip, pickle
+# with open('file.pkl', 'rb') as ifp:
+#     test=(pickle.load(ifp))
+#     test.close()
 # test = pickle.load(open('file.pkl', 'rb'))
 # with gzip.open('file.pkl', 'rb') as ifp:
 #     test=(pickle.load(ifp))
