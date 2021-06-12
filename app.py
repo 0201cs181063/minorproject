@@ -14,7 +14,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 import pickle
 
-test=joblib.load(('file.pkl'));
+# test=joblib.load(('file.pkl'));
 
 # import gzip, pickle
 # with open('file.pkl', 'rb') as ifp:
