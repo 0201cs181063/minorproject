@@ -83,7 +83,7 @@ def home():
     result = ""
     for i in transcript:
         result += ' ' + i['text']
-#     summarized_text1 = []
+    summarized_text1 = []
 #     num_iters = int(len(result)/3000)
 #     summarized_text = []
 #     summarized_text1 = []
@@ -101,15 +101,15 @@ def home():
 #     global h
 #     h=result
 #     summarized_text1.append(result)
-    summarized_text1 = []
-    url = "https://aylien-text.p.rapidapi.com/summarize"
+#     summarized_text1 = []
+#     url = "https://aylien-text.p.rapidapi.com/summarize"
 
-    headers = {
-        'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
-        'x-rapidapi-host': "aylien-text.p.rapidapi.com"
-        }
-    response = requests.request("GET", url, headers=headers, params=result)
-    summarized_text1.append(response)
+#     headers = {
+#         'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
+#         'x-rapidapi-host': "aylien-text.p.rapidapi.com"
+#         }
+#     response = requests.request("GET", url, headers=headers, params=result)
+#     summarized_text1.append(response)
 #     url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer-text"
 
 #     payload = "text=Automatic%20summarization%20is%20the%20process%20of%20reducing%20a%20text%20document%20with%20a%20computer%20program%20in%20order%20to%20create%20a%20summary%20that%20retains%20the%20most%20important%20points%20of%20the%20original%20document.%20As%20the%20problem%20of%20information%20overload%20has%20grown%2C%20and%20as%20the%20quantity%20of%20data%20has%20increased%2C%20so%20has%20interest%20in%20automatic%20summarization.%20Technologies%20that%20can%20make%20a%20coherent%20summary%20take%20into%20account%20variables%20such%20as%20length%2C%20writing%20style%20and%20syntax.%20An%20example%20of%20the%20use%20of%20summarization%20technology%20is%20search%20engines%20such%20as%20Google.%20Document%20summarization%20is%20another.&sentnum=5"
@@ -120,7 +120,7 @@ def home():
 #         }
 #     summarized_text1 = []
 #     response = requests.request("POST", url, data=payload, headers=headers)
-#     summarized_text1.append(response)
+    summarized_text1.append(response)
     return render_template('about.html', data= summarized_text1)
     
 
