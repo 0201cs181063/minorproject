@@ -147,7 +147,7 @@ def home():
 #         }
 #     summarized_text1 = []
 #     response = requests.request("POST", url, data=payload, headers=headers)
-    summarized_text1.append(response)
+    summarized_text1.append(response.text)
     return render_template('about.html', data= summarized_text1)
     
 
