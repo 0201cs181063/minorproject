@@ -105,7 +105,8 @@ def home():
     url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer"
     payload = {
 #       \"url\": \"http://en.wikipedia.org/wiki/Automatic_summarization\",
-      'text': result
+      "text": result,
+      "sentnum": 8
     }
     headers = {
         'content-type': "application/json",
