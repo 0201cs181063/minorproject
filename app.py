@@ -102,18 +102,18 @@ def home():
 #     h=result
 #     summarized_text1.append(result)
 #     summarized_text1 = []
-    url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer"
-    payload = {
-#       \"url\": \"http://en.wikipedia.org/wiki/Automatic_summarization\",
-      text: result,sentnum: 8
-    }
-    headers = {
-        'content-type': "application/json",
-        'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
-        'x-rapidapi-host': "textanalysis-text-summarization.p.rapidapi.com"
-        }
+#     url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer"
+#     payload = {
+# #       \"url\": \"http://en.wikipedia.org/wiki/Automatic_summarization\",
+#       text: result,sentnum: 8
+#     }
+#     headers = {
+#         'content-type': "application/json",
+#         'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
+#         'x-rapidapi-host': "textanalysis-text-summarization.p.rapidapi.com"
+#         }
 
-    response = requests.request("POST", url, data=payload, headers=headers)
+#     response = requests.request("POST", url, data=payload, headers=headers)
 
 
 
@@ -146,7 +146,7 @@ def home():
 #         }
 #     summarized_text1 = []
 #     response = requests.request("POST", url, data=payload, headers=headers)
-    summarized_text1.append(response.text)
+    summarized_text1.append(result)
     return render_template('about.html', data= summarized_text1)
     
 
