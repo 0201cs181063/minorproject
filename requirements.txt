@@ -17,3 +17,11 @@ json2json==0.1.0
 toml==0.10.2
 tokenizers==0.10.3
 requests
+numpy>=1.9.2
+scipy>=0.15.1
+scikit-learn>=0.18
+matplotlib>=1.4.3
+pandas>=0.19
+nltk>=3.4.5
+regex>=2.5.82
+networkx==2.3
