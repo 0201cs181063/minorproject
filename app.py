@@ -134,10 +134,10 @@ def home():
         array=[]
         array.append("invalid link or transcript unavailable")
         return render_template('about.html', error=array)
-    summary = generate_summary(transcript,8)
-    summarized_text1 = []
-    summarized_text1.append(summary)
-    return render_template('about.html', data= summarized_text1)
+#     summary = generate_summary(transcript,8)
+#     summarized_text1 = []
+#     summarized_text1.append(summary)
+    return render_template('about.html', data= transcript)
   
 if __name__ == "__main__":
 	app.debug = True
