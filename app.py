@@ -138,7 +138,11 @@ def generate_summary(file_name, top_n=5):
 #def man():
  #
  #    return render_template('about.html')
+app = Flask(__name__)
 
+@app.route('/')
+def man():
+    return render_template('home.html')
 @app.route('/about')
 def man1():
     return render_template('about.html')
