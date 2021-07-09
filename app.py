@@ -12,8 +12,8 @@ from gensim.summarization import summarize, keywords
 from pprint import pprint
 
 from youtube_transcript_api import YouTubeTranscriptApi
-from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
-import pickle
+# from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
+# import pickle
 
 # test=joblib.load(('file.pkl'));
 
@@ -116,7 +116,7 @@ def home():
 #         'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
 #         'x-rapidapi-host': "textanalysis-text-summarization.p.rapidapi.com"
 #         }
-    summarized_text1.append(summarize(result, word_count=20))
+    summarized_text1.append(summarize( transcript, word_count=100))
     response = requests.request("POST", url, data=summarized_text1)
 
 #     response = requests.request("POST", url, data=payload, headers=headers)
