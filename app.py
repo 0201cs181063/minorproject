@@ -8,8 +8,9 @@ import youtube_transcript_api
 import jinja2
 import requests
 from googletrans import Translator
-
+from gensim.summarization import summarize, keywords
 from pprint import pprint
+
 from youtube_transcript_api import YouTubeTranscriptApi
 from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 import pickle
@@ -84,6 +85,8 @@ def home():
     for i in transcript:
         result += ' ' + i['text']
     summarized_text1 = []
+#     pprint(summarize(result, word_count=20))
+#    
 #     num_iters = int(len(result)/3000)
 #     summarized_text = []
 #     summarized_text1 = []
@@ -102,19 +105,21 @@ def home():
 #     h=result
 #     summarized_text1.append(result)
 #     summarized_text1 = []
-    url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer"
-    payload = {
-#       \"url\": \"http://en.wikipedia.org/wiki/Automatic_summarization\",
-      "text": result,
-      "sentnum": 8
-    }
-    headers = {
-        'content-type': "application/json",
-        'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
-        'x-rapidapi-host': "textanalysis-text-summarization.p.rapidapi.com"
-        }
+#     url = "https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer"
+#     payload = {
+# #       \"url\": \"http://en.wikipedia.org/wiki/Automatic_summarization\",
+#       "text": result,
+#       "sentnum": 8
+#     }
+#     headers = {
+#         'content-type': "application/json",
+#         'x-rapidapi-key': "3345d8c834msh75cec25088f47c7p140295jsndc688f6ab9e8",
+#         'x-rapidapi-host': "textanalysis-text-summarization.p.rapidapi.com"
+#         }
+    summarized_text1.append(summarize(result, word_count=20))
+    response = requests.request("POST", url, data=summarized_text1)
 
-    response = requests.request("POST", url, data=payload, headers=headers)
+#     response = requests.request("POST", url, data=payload, headers=headers)
 
 
 
