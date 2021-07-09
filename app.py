@@ -221,7 +221,7 @@ def home():
 #         }
     summary = generate_summary( transcript,int(6))
     summarized_text1.append(summary)
-    response = requests.request("POST", data=summarized_text1)
+#     response = requests.request("POST", data=summarized_text1)
 
 #     response = requests.request("POST", url, data=payload, headers=headers)
 
@@ -257,7 +257,7 @@ def home():
 #     summarized_text1 = []
 #     response = requests.request("POST", url, data=payload, headers=headers)
 #     summarized_text1.append(response.text)
-#     return render_template('about.html', data= summarized_text1)
+    return render_template('about.html', data= summarized_text1)
     
 
 
