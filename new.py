@@ -88,8 +88,10 @@ def generate_summary(file_name, top_n=5):
     a = ". ".join(summarize_text)
     return a
 
- app = Flask(__name__)
-
+app = Flask(__name__)
+@app.route('/')
+def man():
+    return render_template('home.html')
 @app.route('/about')
 def man1():
     return render_template('about.html')
