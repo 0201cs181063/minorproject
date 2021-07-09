@@ -8,7 +8,6 @@ import jinja2
 from googletrans import Translator
 from pprint import pprint
 from youtube_transcript_api import YouTubeTranscriptApi
-from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 from nltk.corpus import stopwords
 import numpy as np
 import networkx as nx
