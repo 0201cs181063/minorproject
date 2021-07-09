@@ -1,15 +1,20 @@
+from flask import Flask, render_template, request ,jsonify
+import numpy as np
+import json
+import urllib
+import urllib.request
 import youtube_transcript_api
 import jinja2
-import requests
 from googletrans import Translator
 from pprint import pprint
+from youtube_transcript_api import YouTubeTranscriptApi
+from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 from nltk.corpus import stopwords
 import numpy as np
 import networkx as nx
 import regex
-from flask import Flask, request, jsonify, render_template
 import nltk
-from youtube_transcript_api import YouTubeTranscriptApi
+# nltk.download('stopwords')
 
 def read_article(data):
 
@@ -88,10 +93,13 @@ def generate_summary(file_name, top_n=5):
     a = ". ".join(summarize_text)
     return a
 
+
 app = Flask(__name__)
+
 @app.route('/')
 def man():
     return render_template('home.html')
+
 @app.route('/about')
 def man1():
     return render_template('about.html')
@@ -111,9 +119,11 @@ def trans():
         v='fr'
     if lang=='English':
         v='en'
-
+    
+    print(text1)
     m=transL.translate(text1, dest=v)
     r=[]
+    print(m.text)
     r.append(m.text)
     return render_template('about.html', data=r)
 
@@ -134,11 +144,22 @@ def home():
         array=[]
         array.append("invalid link or transcript unavailable")
         return render_template('about.html', error=array)
-#     summary = generate_summary(transcript,8)
-#     summarized_text1 = []
-#     summarized_text1.append(summary)
-    return render_template('about.html', data= transcript)
-  
+
+
+
+    result = ""
+    for i in transcript:
+        result += ' ' + i['text']
+    summarized_text1=[]
+    trial_sum = generate_summary(result)
+    summarized_text1.append(trial_sum)
+    
+    return render_template('about.html', data=summarized_text1)
+    
+
+
+
 if __name__ == "__main__":
-	app.debug = True
-	app.run()
+    app.run(debug=True)
+
+
