@@ -151,8 +151,8 @@ def home():
     for i in transcript:
         result += ' ' + i['text']
     summarized_text1=[]
-    trial_sum = generate_summary(result)
-    summarized_text1.append(trial_sum)
+#     trial_sum = generate_summary(result)
+    summarized_text1.append(result)
     
     return render_template('about.html', data=summarized_text1)
     
